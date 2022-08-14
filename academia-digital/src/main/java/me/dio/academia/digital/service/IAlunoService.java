@@ -1,10 +1,13 @@
 package me.dio.academia.digital.service;
 
 import me.dio.academia.digital.entity.Aluno;
+import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 
 import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
 
 public interface IAlunoService {
   /**
@@ -41,4 +44,7 @@ public interface IAlunoService {
    * @param id - id do Aluno que será removido.
    */
   void delete(Long id);
+  
+  List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
+  
 }
