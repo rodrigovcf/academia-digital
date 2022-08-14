@@ -2,6 +2,8 @@ package me.dio.academia.digital.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import me.dio.academia.digital.entity.Aluno;
 import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.service.impl.AlunoServiceImpl;
+
 
 @RestController
 @RequestMapping("/alunos")
@@ -28,7 +31,7 @@ public class AlunoController {
 	}
 	
 	@PostMapping
-	public Aluno create(@RequestBody AlunoForm form) {
+	public Aluno create(@Valid @RequestBody AlunoForm form) {
 		return service.create(form);
 	}
 	
